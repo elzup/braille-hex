@@ -1,0 +1,10 @@
+#!/bin/sh
+# usage: echo 7ce387c | braille-hex      (hex → braille)
+#        echo ⠚⠉⠑⠒⠓⠚⠉ | braille-hex -d  (braille → hex)
+hex=0123456789abcdef
+cells=⠀⠐⠂⠒⠈⠘⠊⠚⠓⠛⠁⠃⠉⠙⠑⠋
+
+case $1 in
+  -d) sed "y/$cells/$hex/" ;;
+  *) tr A-F a-f | sed "y/$hex/$cells/" ;;
+esac

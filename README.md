@@ -5,8 +5,10 @@
 Hex digits in the top four dots of a braille cell.
 
 ```
-$ echo 7ce387c | braille-hex
+$ echo 7ce387c | ./braille-hex
 ⠚⠉⠑⠒⠓⠚⠉
+$ echo ⠚⠉⠑⠒⠓⠚⠉ | ./braille-hex -d
+7ce387c
 ```
 
 ```
